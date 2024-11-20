@@ -8,12 +8,18 @@ const JUMP_VELOCITY = -300.0
 const DOUBLE_JUMP_LIMIT = 2
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var global_status: Node = %GlobalStatus
 
 var double_jump_level = 0
 
 func _physics_process(delta: float) -> void:
 	# 获取角色运动方向 -1，0，1
 	var direction := Input.get_axis("move_left", "move_right")
+	
+	if not StateManager.pleayer_survive:
+		print("你已经死了，不能再动了！")
+		move_and_slide()
+		return 
 	
 	if direction > 0:
 		animated_sprite.flip_h = false

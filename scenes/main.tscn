@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=4 uid="uid://ceo8so1ij4pjy"]
+[gd_scene load_steps=16 format=4 uid="uid://ceo8so1ij4pjy"]
 
 [ext_resource type="PackedScene" uid="uid://bvx457fut5rdq" path="res://scenes/player.tscn" id="1_lj23c"]
+[ext_resource type="Script" path="res://scripts/state_manager.gd" id="1_u0odj"]
 [ext_resource type="Texture2D" uid="uid://brfpe5a3epsnm" path="res://assets/sprites/world_tileset.png" id="2_oyep0"]
 [ext_resource type="PackedScene" uid="uid://bomm38je75fyi" path="res://scenes/绿色史莱姆.tscn" id="2_rk336"]
 [ext_resource type="PackedScene" uid="uid://w8pxpu6ukyyr" path="res://scenes/平台.tscn" id="3_pv8tm"]
@@ -262,6 +263,10 @@ _data = {
 distance = -0.166667
 
 [node name="main" type="Node2D"]
+
+[node name="StateManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_u0odj")
 
 [node name="图层" type="Node" parent="."]
 
