@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 ## 当节点第一次进入场景树时调用。
 #func _ready() -> void:
@@ -15,6 +16,7 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	#if body.name == "player":
 	print(body.name + " 金币 +1 !")
-	queue_free()
+	#queue_free()
+	animation_player.play("eat")
 	pass
 	
